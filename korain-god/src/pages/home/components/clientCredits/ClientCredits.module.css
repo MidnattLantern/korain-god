@@ -1,0 +1,17 @@
+.ClientCreditsView {
+    width: calc(100% - 40px);
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    backdrop-filter: blur(15px);
+    background-color: var(--color-dark);
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid var(--color-border);
+    box-shadow: inset 0px 0px 15px var(--color-dark);
+}
