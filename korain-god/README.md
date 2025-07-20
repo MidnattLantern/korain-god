@@ -1,7 +1,8 @@
 Live link: https://midnattlantern.github.io/korain-god/ 
 
+
 Setting up
----
+===
 
 1. Bash:
 ```zsh
@@ -28,8 +29,9 @@ npm install
 npm run dev
 ```
 
+
 Deployment
----
+===
 
 1. Install Github Pages
 ```zsh
@@ -59,4 +61,39 @@ export default defineConfig({
 4. When the app is ready, run:
 ```zsh
 npm run deploy
+```
+
+Routing (hash):
+===
+
+1. Install React Router:
+```zsh
+npm install react-router-dom
+```
+
+2. This is a static project, so wrap Main.tsx to feature hash router:
+```ts
+import { HashRouter } from 'react-router-dom'
+// ...
+<HashRouter>
+  <App />
+</HashRouter>
+```
+
+3. Inside App.tsx, wrap content within
+```tsx
+import { Routes, Route } from 'react-router-dom'
+// ...
+<Routes>
+  <Route path="/" element={<h1>Home element</h1>} />
+  <Route path="/about" element={<h1>About element</h1>} />
+  <Route path="/etc" element={<h1>Etc element</h1>} />
+</Routes>
+```
+
+4. Use the Route <Link> anywhere instead to navigate around the app:
+```ts
+import { Link } from 'react-router-dom'
+// ...
+<Link to="/about">About</Link>
 ```
