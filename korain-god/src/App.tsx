@@ -1,6 +1,7 @@
 import Styles from "./App.module.css";
 import { Routes, Route, Link } from 'react-router-dom'
 import Home from "./pages/home/Home";
+import Symbol from "./pages/symbol/Symbol";
 
 function App() {
 
@@ -16,7 +17,7 @@ function App() {
       <main>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/symbol" element={<h1>Symbol</h1>} />
+        <Route path="/symbol" element={<Symbol/>} />
         <Route path="/portrait" element={<h1>Portrait</h1>} />
         <Route path="/shrine" element={<h1>Shrine</h1>} />
         <Route path="/temple" element={<h1>Temple</h1>} />
