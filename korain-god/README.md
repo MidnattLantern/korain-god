@@ -97,3 +97,44 @@ import { Link } from 'react-router-dom'
 // ...
 <Link to="/about">About</Link>
 ```
+
+
+Steps for development
+===
+
+Setting up:
+---
+- Setup the React + Vite framework.
+- Use the TypeScript language.
+- Setup vector graphics support.
+- Setup a Github repository to host the project.
+- Setup Github pages to build and publish the project with a link.
+- Setup in detail can be found further up on this documentation file.
+
+Documentation:
+---
+- Throughout the development, documentation is done in this README file.
+- Documentation help explain parts of the project and provide context.
+- Ultimate proof that everything is genuine and original.
+
+Mobile first:
+---
+- Resize the browser window to a narrow view, or better yet, test with a physical phone.
+- Once the layout looks and feels good for phones, impliment a viewport detector and redesign the layout to look and feel good for larger devices.
+- desktop: more than 1024px
+- tablet: 1024px or less
+- phone: 440px or less
+
+DRY components:
+---
+- "Don't Repeat Yourself" (DRY) is a practice to make elements reusable. This practice is used here for instance with the "project cards". The design for a project card is done once, then reused multiple times with the only difference being the source to the artwork, title, welblog content, etc.
+
+Asset import:
+---
+- There are practices to be considered when importing artworks, they must be located in an appropriate directory/ paths (folders within folders) and the name of the image should be written in kebab-case (all letters lowercase with a dash instead of a space).
+- Import an original high-resolution raw version, and a compressed version that takes less memory, then let the user download both.
+
+Routing:
+---
+- Parts of the web page, such as viewing a project in detail should be accessed through its own link.
+- This web page is static, so use "hash-routing".

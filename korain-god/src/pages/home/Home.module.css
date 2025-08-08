@@ -1,7 +1,10 @@
 .HomeView {
     display: flex;
     flex-direction: column;
+    align-items: center;
     height: 100vh;
+    overflow-x: hidden;
+    overflow-y: scroll;
 }
 
 .WallpaperFrame {
@@ -14,7 +17,6 @@
     z-index: -1;
     width: 100%;
     height: 100%;
-    overflow: hidden;
 }
 .WallpaperAppearance {
     width: 100%;

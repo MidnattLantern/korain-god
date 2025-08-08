@@ -4,16 +4,17 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-    width: calc(100% - 40px);
+    width: calc(100% - 30px);
     margin-left: 10px;
     margin-right: 10px;
     margin-top: 20px;
     backdrop-filter: blur(15px);
-    background-color: var(--color-dark);
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid var(--color-border);
-    box-shadow: inset 0px 0px 15px var(--color-dark);
+    padding-bottom: 10px;
+}
+
+.Title {
+    text-transform: uppercase;
+    pointer-events: none;
 }
 
 .ButtonsView {
@@ -22,7 +23,7 @@
 }
 
 .ImageSize {
-    width: 320px;
+    width: 100%;
     height: auto;
     margin-top: 10px;
     margin-bottom: 10px;
@@ -30,8 +31,13 @@
 }
 
 .ButtonsView {
-
+    display: flex;
+    flex-direction: row;
 }
-.NavLink {
 
+.OpenButton:hover,
+.OpenButton:active {
+    background-color: rgba(0,0,0,0);
+    text-decoration: underline;
 }
+

@@ -1,7 +1,9 @@
 import Styles from "./Home.module.css";
-import WallpaperAsset from "../../assets/other/placeholder-asset.jpg";
+import WallpaperAsset from "../../assets/other/app-wallpaper.png";
 import ClientCredits from "./components/clientCredits/ClientCredits";
 import ProjectCard from "./components/projectCard/ProjectCard";
+import SymbolLarge from "../../assets/symbol/downloadable/korain-symbol-large.png";
+import SymbolSmall from "../../assets/symbol/downloadable/korain-symbol-small.jpg";
 
 const Home = () => {
 
@@ -18,7 +20,7 @@ const Home = () => {
         <div className={Styles.HomeView}>
             <Wallpaper/>
             <ClientCredits/>
-            <ProjectCard title="Symbol" link="symbol"/>
+            <ProjectCard title="Symbol" link="symbol" smallAsset={SymbolSmall} largeAsset={SymbolLarge} largeFileInfo="PNG 7,5 MB"/>
             <ProjectCard title="Portrait" link="portrait"/>
             <ProjectCard title="Shrine" link="shrine"/>
             <ProjectCard title="Temple" link="temple"/>

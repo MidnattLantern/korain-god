@@ -35,6 +35,8 @@ animation: oxidise 120s ease-in-out forwards;
 
 body {
   margin: 0;
+  overflow: hidden;
+  box-shadow: inset 0px 0px 15px 10px var(--color-dark);
 }
 
 h1, p, a, button {
@@ -52,9 +54,9 @@ a:hover {
 }
 
 button {
-  width: 150px;
-  height: 30px;
-  border-radius: 15px;
+  min-width: 160px;
+  min-height: 40px;
+  border-radius: 20px;
   margin-left: 10px;
   margin-right: 10px;
   border-width: 1px;
@@ -64,12 +66,17 @@ button {
   box-shadow: 0px 2.5px 2.5px var(--color-dark-transparent);
   transition: all 0.15s ease;
   color: var(--color-theme-primary);
+  font-size: 15px;
   animation: oxidize 120s ease-in-out forwards;
 }
 button:hover {
   box-shadow: 0px 2.5px 7.5px var(--color-dark);
   cursor: pointer;
-  text-decoration: underline;
+}
+button:hover {
+  background-color: rgba(200, 200, 200, 0.25);
+  color: white;
+  transition: all 0.05s ease;
 }
 button:active {
   box-shadow: inset 0px 0.5px 7.5px var(--color-dark);
