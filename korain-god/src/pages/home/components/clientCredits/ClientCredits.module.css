@@ -14,3 +14,37 @@
     box-shadow: inset 0px 0px 15px var(--color-dark);
     padding-bottom: 10px;
 }
+
+.Title {
+    font-size: 30px;
+}
+
+.Text {
+    font-size: 15px;
+}
+
+@media (min-width: 440px) {
+    .ClientCreditsView {
+        width: 80vw;
+        height: 10vw;
+    }
+    .Title {
+        font-size: 3vw;
+    }
+    .Text {
+        font-size: 1.5vw;
+    }
+}
+
+@media (min-width: 1024px) {
+    .ClientCreditsView {
+        width: 800px;
+        height: 100px;
+    }
+    .Title {
+        font-size: 30px;
+    }
+    .Text {
+        font-size: 15px;
+    }
+}

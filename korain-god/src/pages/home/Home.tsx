@@ -1,4 +1,5 @@
 import Styles from "./Home.module.css";
+//import PlaceholderAsset from "../../assets/other/placeholder-asset.jpg";
 import WallpaperAsset from "../../assets/other/app-wallpaper.png";
 import ClientCredits from "./components/clientCredits/ClientCredits";
 import ProjectCard from "./components/projectCard/ProjectCard";

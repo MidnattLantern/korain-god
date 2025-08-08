@@ -34,3 +34,17 @@
     backdrop-filter: blur(5px);
     background-color: var(--color-dark-transparent);
 }
+
+@media (min-width: 440px) {
+    .HomeView {
+        width: calc(100vw - 20px);
+        padding: 5px;
+    }
+}
+/*
+@media (min-width: 1024px) {
+    .HomeView {
+
+    }
+}
+*/

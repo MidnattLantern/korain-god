@@ -20,6 +20,7 @@
 .ButtonsView {
     display: flex;
     flex-direction: row;
+    justify-content: center;
 }
 
 .ImageSize {
@@ -41,3 +42,74 @@
     text-decoration: underline;
 }
 
+@media (min-width: 440px) {
+    .ProjectCardView {
+        justify-content:left;
+        width: 80vw;
+        min-height: 40vw;
+        flex-direction: row;
+        border: 1px solid var(--color-border);
+        box-shadow: inset 0px 0px 15px var(--color-dark);
+        border-radius: 5px;
+    }
+    .TitleContainer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: visible;
+        width: 15%;
+        height: 100%;
+    }
+    .Title {
+        transform: rotate(-90deg);
+        font-size: 6vw;
+    }
+    .ImageAndNavigationContainer {
+        display: flex;
+        flex-direction: column;
+        width: 85%;
+        height: 100%;
+        overflow: hidden;
+        margin-top: 1vw;
+        margin-right: 1vw;
+    }
+    .ImageSize {
+        width: auto;
+        height: 100%;
+        margin-top: 0px;
+        object-fit: contain;
+        border-radius: 0px;
+    }
+    .ButtonSize {
+        min-width: 20vw;
+        width: 20vw;
+        min-height: 4vw;
+        height: 4vw;
+        border-radius: 2vw;
+        margin: 1vw;
+        font-size: 1.6vw;
+    }
+}
+
+@media (min-width: 1024px) {
+    .ProjectCardView {
+        width: 800px;
+        min-height: 400px;
+    }
+    .Title {
+        font-size: 60px;
+    }
+    .ImageAndNavigationContainer {
+        margin-top: 10px;
+        margin-right: 10px;
+    }
+    .ButtonSize {
+        min-width: 200px;
+        width: 200px;
+        min-height: 40px;
+        height: 40px;
+        border-radius: 20px;
+        margin: 10px;
+        font-size: 16px;
+    }
+}
