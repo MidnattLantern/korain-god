@@ -1,0 +1,9 @@
+.BustPortraitView {
+    display: flex;
+    flex-direction: column;
+}
+
+.ImageSize {
+    width: 500px;
+    height: auto;
+}

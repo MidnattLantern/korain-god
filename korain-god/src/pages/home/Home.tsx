@@ -5,6 +5,7 @@ import ClientCredits from "./components/clientCredits/ClientCredits";
 import ProjectCard from "./components/projectCard/ProjectCard";
 import SymbolLarge from "../../assets/symbol/downloadable/korain-symbol-large.png";
 import SymbolSmall from "../../assets/symbol/downloadable/korain-symbol-small.jpg";
+import BustPortraitSketchV1Large from "../../assets/portrait/downloadable/korain-bust-portrait-sketch-v1-large.png";
 
 const Home = () => {
 
@@ -22,7 +23,7 @@ const Home = () => {
             <Wallpaper/>
             <ClientCredits/>
             <ProjectCard title="Symbol" link="symbol" smallAsset={SymbolSmall} largeAsset={SymbolLarge} largeFileInfo="PNG 7,5 MB"/>
-            <ProjectCard title="Portrait" link="portrait"/>
+            <ProjectCard title="Portrait" link="portrait" smallAsset={BustPortraitSketchV1Large} largeAsset={BustPortraitSketchV1Large} largeFileInfo="PNG 5,1 MB"/>
             <ProjectCard title="Shrine" link="shrine"/>
             <ProjectCard title="Temple" link="temple"/>
         </div>

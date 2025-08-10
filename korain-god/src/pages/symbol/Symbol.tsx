@@ -3,7 +3,7 @@ import Large from "../../assets/symbol/downloadable/korain-symbol-large.png";
 import Small from "../../assets/symbol/downloadable/korain-symbol-small.jpg";
 
 const Symbol = () => {
-    return(
+    return (
         <div className={Styles.SymbolView}>
             <h1>Korain Symbol</h1>
             <img className={Styles.ImageSize} src={Small} alt={"Korain Symbol Small"}/>
