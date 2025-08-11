@@ -6,26 +6,3 @@
     overflow-x: scroll;
     overflow-y: hidden;
 }
-
-.NavBar {
-    position: fixed;
-    bottom: 15px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid var(--color-border);
-    background-color: var(--color-dark-transparent);
-    backdrop-filter: blur(10px);
-    border-radius: 20px;
-    width: calc(100% - 60px);
-    overflow-x: scroll;
-    overflow-y: hidden;
-    height: 40px;
-    z-index: 1;
-    padding-left: 10px;
-    padding-right: 10px;
-}
-.NavLink {
-    margin-left: 10px;
-    margin-right: 10px;
-}
