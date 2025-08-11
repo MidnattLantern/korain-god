@@ -40,7 +40,7 @@
 .LinksView {
     position: relative;
     display: flex;
-    justify-content: center;
+    justify-content: baseline;
     align-items: center;
     width: calc(100% - 80px);
     height: 40px;
@@ -52,6 +52,8 @@
 .NavLink {
     margin-left: 10px;
     margin-right: 10px;
+    width: fit-content;
+    white-space: nowrap;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;

@@ -5,6 +5,7 @@ import { useRef } from "react";
 const NavBar = () => {
     const linksRef = useRef<HTMLDivElement>(null);
 
+
     const scrollLeft = () => {
         if (linksRef.current) {
             linksRef.current.scrollBy({ left: -50, behavior: "smooth" });
@@ -22,12 +23,17 @@ const NavBar = () => {
             <button className={Styles.ScrollButton} onClick={() => {scrollLeft()}}>←</button>
             <div className={Styles.LinksView} ref={linksRef}>
                 <hr className={Styles.HeaderRow}/>
-                <Link className={Styles.NavLink} to="/">Home</Link>
+                <Link className={Styles.NavLink} to="/"><strong>Home</strong></Link>
                 <hr className={Styles.HeaderRow}/>
                 <Link className={Styles.NavLink} to="/symbol">Symbol</Link>
                 <Link className={Styles.NavLink} to="/portrait">Portrait</Link>
                 <Link className={Styles.NavLink} to="/shrine">Shrine</Link>
                 <Link className={Styles.NavLink} to="/temple">Temple</Link>
+                <hr className={Styles.HeaderRow}/>
+                <a className={Styles.NavLink} href="https://www.worldanvil.com/w/idoria-yviira" target="_blank">Project Midoria</a>
+                <a className={Styles.NavLink} href="https://github.com/MidnattLantern" target="_blank">Developer's GitHub</a>
+                <a className={Styles.NavLink} href="https://www.artstation.com/midnight_lantern" target="_blank">Illustrator's ArtStation</a>
+                <a className={Styles.NavLink} href="https://github.com/MidnattLantern/korain-god" target="_blank">Source Code</a>
                 <hr className={Styles.HeaderRow}/>
             </div>
             <button className={Styles.ScrollButton} onClick={() => {scrollRight()}}>→</button>
