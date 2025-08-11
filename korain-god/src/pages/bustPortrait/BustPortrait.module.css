@@ -1,9 +1,18 @@
 .BustPortraitView {
     display: flex;
     flex-direction: column;
+    width: calc(100vw - 0px);
+    height: calc(100vh - 0px);
+    overflow: scroll;
 }
 
 .ImageSize {
-    width: 500px;
+    width: 100vw;
     height: auto;
+}
+
+@media (min-width: 440px) {
+    .ImageSize {
+        max-width: 500px;
+    }
 }

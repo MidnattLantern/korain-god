@@ -1,8 +1,13 @@
 .AppView {
     display: flex;
+    height: auto;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    overflow-x: scroll;
-    overflow-y: hidden;
+    width: 100vw;
+    overflow-x: hidden;
+}
+
+.MainView {
+
 }
