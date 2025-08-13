@@ -1,5 +1,5 @@
 import Styles from "./Home.module.css";
-//import PlaceholderAsset from "../../assets/other/placeholder-asset.jpg";
+import PlaceholderAsset from "../../assets/other/placeholder-asset.jpg";
 import WallpaperAsset from "../../assets/other/app-wallpaper.png";
 import ClientCredits from "./components/clientCredits/ClientCredits";
 import ProjectCard from "./components/projectCard/ProjectCard";
@@ -26,8 +26,10 @@ const Home = () => {
             <ClientCredits/>
             <ProjectCard title="Symbol" link="symbol" smallAsset={SymbolSmall} largeAsset={SymbolLarge} largeFileInfo="PNG 7,5 MB"/>
             <ProjectCard title="Portrait" link="portrait" smallAsset={BustPortraitSketchV1Large} largeAsset={BustPortraitSketchV1Large} largeFileInfo="PNG 5,1 MB"/>
-            <ProjectCard title="Shrine" link="shrine"/>
+            <ProjectCard title="Shrine" link="shrine" smallAsset={PlaceholderAsset}/>
+            {/*
             <ProjectCard title="Temple" link="temple"/>
+            */}
             {width < 440 && <div className={Styles.BottomPadding}/>}
 
         </div>

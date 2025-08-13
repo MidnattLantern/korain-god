@@ -30,7 +30,7 @@ const ProjectCard = ({title, link, smallAsset, largeAsset, largeFileInfo} : Proj
                 <h1 className={Styles.Title}>{title}</h1>
             </div>
             <div className={Styles.ImageAndNavigationContainer}>
-                <img className={Styles.ImageSize} src={smallAsset} alt={"Work in progress"}/>
+                <Link to={`/${link}`}><img className={Styles.ImageSize} src={smallAsset} alt={"Work in progress"}/></Link>
                 <div className={Styles.ButtonsView}>
                     <a href={largeAsset} download={"Large"}><button className={Styles.ButtonSize}>{"↓" + (largeFileInfo ? ` as ${largeFileInfo}` : "")}</button></a>
                     <Link to={`/${link}`}><button className={`${Styles.OpenButton} ${Styles.ButtonSize}`}>{"Open →"}</button></Link>

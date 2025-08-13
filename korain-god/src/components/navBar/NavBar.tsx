@@ -25,7 +25,7 @@ const NavBar = () => {
             {width < 1024 && <button className={Styles.ScrollButton} onClick={() => {scrollLeft()}}>←</button> }
             <div className={Styles.LinksView} ref={linksRef}>
                 <hr className={Styles.HeaderRow}/>
-                <Link className={Styles.NavLink} to="/"><strong>Home</strong></Link>
+                <Link className={Styles.NavLink} to="/"><strong>HOME</strong></Link>
                 <hr className={Styles.HeaderRow}/>
                 <Link className={Styles.NavLink} to="/symbol">Symbol</Link>
                 <Link className={Styles.NavLink} to="/portrait">Portrait</Link>

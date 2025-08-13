@@ -29,6 +29,12 @@
     .ClientCreditsView {
         width: 80vw;
         height: 10vw;
+        box-shadow: inset 0px 0px 15px var(--color-dark);
+        padding-bottom: 1vw;
+
+        border: 0.15vw solid transparent;
+        border-image: linear-gradient(to right, var(--color-border-fade), var(--color-border), var(--color-border-fade));
+        border-image-slice: 1;
     }
     .Title {
         font-size: 3vw;
@@ -42,11 +48,6 @@
     .ClientCreditsView {
         width: 800px;
         height: 100px;
-        box-shadow: inset 0px 0px 15px var(--color-dark);
-
-        border: 1.5px solid transparent;
-        border-image: linear-gradient(to right, var(--color-border-fade), var(--color-border), var(--color-border-fade));
-        border-image-slice: 1;
     }
     .Title {
         font-size: 30px;
