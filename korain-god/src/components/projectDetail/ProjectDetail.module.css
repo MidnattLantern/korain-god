@@ -5,11 +5,13 @@
     align-items: center;
     margin-top: 50px;
     margin-bottom: 100px;
+    width: 900px;
 }
 
 .TitleAndVariations {
     display: flex;
     flex-direction: column;
+    height: 100%;
 }
 
 .BigTitle {
@@ -79,17 +81,16 @@
 @media (min-width: 1024px) {
     .ProjectDetailView {
         flex-direction: row;
-        align-items: flex-start;
         justify-content: space-between;
-        width: auto;
-        height: auto;
         padding: 20px;
-        border: 1px solid var(--color-border);
         background-color: var(--color-dark);
-        box-shadow: 0px 10px 15px 0px var(--color-dark);
+        box-shadow: inset 0px 0px 15px var(--color-dark);
+        border: 0.15vw solid transparent;
+        border-image: linear-gradient(to right, var(--color-border-fade), var(--color-border), var(--color-border-fade));
+        border-image-slice: 1;
     }
     .ImageSize {
-        width: 500px;
+        width: 100%;
         height: auto;
         margin-bottom: 0px;
         margin-left: 20px;

@@ -2,20 +2,19 @@ import Styles from "./ProjectDetail.module.css";
 import { useWindowSize } from "../../hooks/useWInidowSize";
 
 type ProjectDetailProps = {
-    title?: string;
+    title: string;
+    smallAsset: string;
+    largeAsset: string;
+    smallFileInfo: string;
+    largeFileInfo: string;
+
     titleAlt1?: string;
-    titleAlt2?: string;
-
-    smallAsset?: string;
-    largeAsset?: string;
-    smallFileInfo?: string;
-    largeFileInfo?: string;
-
     smallAssetAlt1?: string;
     largeAssetAlt1?: string;
     smallFileInfoAlt1?: string;
     largeFileInfoAlt1?: string;
     
+    titleAlt2?: string;
     smallAssetAlt2?: string;
     largeAssetAlt2?: string;
     smallFileInfoAlt2?: string;
@@ -23,10 +22,9 @@ type ProjectDetailProps = {
 };
 
 const ProjectDetail = ({
-    title, titleAlt1, titleAlt2,
-    smallAsset, largeAsset, smallFileInfo, largeFileInfo,
-    smallAssetAlt1, largeAssetAlt1, smallFileInfoAlt1, largeFileInfoAlt1,
-    smallAssetAlt2, largeAssetAlt2, smallFileInfoAlt2, largeFileInfoAlt2,
+    title, smallAsset, largeAsset, smallFileInfo, largeFileInfo,
+    titleAlt1, smallAssetAlt1, largeAssetAlt1, smallFileInfoAlt1, largeFileInfoAlt1,
+    titleAlt2, smallAssetAlt2, largeAssetAlt2, smallFileInfoAlt2, largeFileInfoAlt2,
 } : ProjectDetailProps) => {
     const { width } = useWindowSize();
 

@@ -1,0 +1,50 @@
+.WeblogView {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    text-align: justify;
+}
+
+.ChapterView {
+    width: calc(100% - 30px);
+    padding-top: 20px;
+    border-top: 1.5px solid transparent;
+    border-image: linear-gradient(to right, rgba(0,0,0,0), var(--color-border), rgba(0,0,0,0));
+    border-image-slice: 1;
+}
+
+.WeblogView h1 {
+    margin-bottom: 20px;
+}
+
+.WeblogView p,
+.WeblogView li {
+    color: rgba(250, 250, 250, 0.8);
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.WeblogView img {
+    max-width: 100%;
+}
+
+@media (min-width: 440px) {
+    .ChapterView {
+    width: 350px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .WeblogView {
+        background-color: var(--color-dark);
+        width: 900px;
+        border: 0.15vw solid transparent;
+        border-image: linear-gradient(to right, var(--color-border-fade), var(--color-border), var(--color-border-fade));
+        border-image-slice: 1;
+    }
+    .ChapterView {
+        width: calc(100% - 20px);
+        padding: 20px;
+    }
+}
