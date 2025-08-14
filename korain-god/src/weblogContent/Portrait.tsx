@@ -16,6 +16,7 @@ const PortraitWeblog = () => {
             <p>I didn't know how I wanted to shade the attire, though, because I was working with a divinity and copper as a material for inspiration, I wasn't bound by logic. I experimented with shimmering behaviour of copper and got a shimmering effect I think looks neat. Add (glow) is really effective.</p>
             <p>When painting the radiant effect, I took the opportunity to balance the weight. The sword and scale had thrown the portrait off balance with a diagonal dirction. I designed the radiation to counter that.</p>
             <p>This palette is far outside my comfort zone, and I learned quite a bit about this pallette that I've been afraid of. I discovered the sweet spot of lighting when you blend orange and turqouse. It's a unique shade of neutral vibrancy without being grey and boring.</p>
+            <p>The colour balance felt a bit lacking confidence, as it's outside my palette, so I compensated the shy tones with level correction in Affinity Photo to make it more yellow and teal.</p>
         </div>
     )
 };
