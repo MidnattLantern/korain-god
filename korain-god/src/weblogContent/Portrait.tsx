@@ -12,6 +12,10 @@ const PortraitWeblog = () => {
             <p>In the early stage, I just throw paint with no consideration for the edges, this is to see what balance across the canvas works in the big picture.</p>
             <p>To get into the mood, I listen to dark ambient, such as God Body Disconnect: Existential and transcendental. It helps me get into the right wavelength.</p>
             <p>The actual content for the stone tablet wasn't important, so for the writings, I copy-pasted Lorem ipsum text, mirrored, then rotated and stretched it.</p>
+            <p>The hair takes inspiration from how copper behaves as it oxidise: orange in early stages, shifting to turqoise as it's being exposed.</p>
+            <p>I didn't know how I wanted to shade the attire, though, because I was working with a divinity and copper as a material for inspiration, I wasn't bound by logic. I experimented with shimmering behaviour of copper and got a shimmering effect I think looks neat. Add (glow) is really effective.</p>
+            <p>When painting the radiant effect, I took the opportunity to balance the weight. The sword and scale had thrown the portrait off balance with a diagonal dirction. I designed the radiation to counter that.</p>
+            <p>This palette is far outside my comfort zone, and I learned quite a bit about this pallette that I've been afraid of. I discovered the sweet spot of lighting when you blend orange and turqouse. It's a unique shade of neutral vibrancy without being grey and boring.</p>
         </div>
     )
 };

@@ -1,5 +1,6 @@
 import Styles from "./ProjectDetail.module.css";
 import { useWindowSize } from "../../hooks/useWInidowSize";
+import { useState } from "react";
 
 type ProjectDetailProps = {
     title: string;
@@ -27,6 +28,7 @@ const ProjectDetail = ({
     titleAlt2, smallAssetAlt2, largeAssetAlt2, smallFileInfoAlt2, largeFileInfoAlt2,
 } : ProjectDetailProps) => {
     const { width } = useWindowSize();
+    const [previewImage, setPreviewImage] = useState<string>(smallAsset);
 
     const Wallpaper = () => {
         return(
@@ -39,7 +41,7 @@ const ProjectDetail = ({
 
     const VariationsView = () => {
         return(<>
-            <div className={Styles.VariationSection}>
+            <div className={Styles.VariationSection} onMouseEnter={() => {setPreviewImage(smallAsset)}}>
                 <p className={Styles.SmallTitle}>{title}</p>
                 <div className={Styles.DownloadButtonsSection}>
                     <a href={largeAsset} download={`Korain God ${title} ${largeFileInfo}`}><button>↓ as {largeFileInfo}</button></a>
@@ -48,7 +50,7 @@ const ProjectDetail = ({
             </div>
 
             { smallAssetAlt1 &&
-            <div className={Styles.VariationSection}>
+            <div className={Styles.VariationSection} onMouseEnter={() => {setPreviewImage(smallAssetAlt1)}}>
                 <p className={Styles.SmallTitle}>{titleAlt1}</p>
                 <div className={Styles.DownloadButtonsSection}>
                     <a href={largeAssetAlt1} download={`Korain God ${title} ${largeFileInfoAlt1}`}><button>↓ as {largeFileInfoAlt1}</button></a>
@@ -58,7 +60,7 @@ const ProjectDetail = ({
             }
 
             { smallAssetAlt2 &&
-            <div className={Styles.VariationSection}>
+            <div className={Styles.VariationSection} onMouseEnter={() => {setPreviewImage(smallAssetAlt2)}}>
                 <p className={Styles.SmallTitle}>{titleAlt2}</p>
                 <div className={Styles.DownloadButtonsSection}>
                     <a href={largeAssetAlt2} download={`Korain God ${title} ${largeFileInfoAlt2}`}><button>↓ as {largeFileInfoAlt2}</button></a>
@@ -72,7 +74,7 @@ const ProjectDetail = ({
     const PhoneView = () => {
         return(<>
             <h1 className={Styles.BigTitle}>{title}</h1>
-            <img className={Styles.ImageSize} src={smallAsset} alt="No image"/>
+            <img className={Styles.ImageSize} src={previewImage} alt="No image"/>
             <VariationsView/>
         </>)
     };
@@ -83,7 +85,7 @@ const ProjectDetail = ({
                 <h1 className={Styles.BigTitle}>{title}</h1>
                 <VariationsView/>
             </div>
-            <img className={Styles.ImageSize} src={smallAsset} alt="No image"/>
+            <img className={Styles.ImageSize} src={previewImage} alt="No image"/>
         </>)
     };
 

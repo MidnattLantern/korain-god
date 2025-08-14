@@ -24,8 +24,8 @@
 }
 
 .ImageSize {
-    width: auto;
-    height: 50vh;
+    width: 70vw;
+    height: auto;
     margin-bottom: 20px;
     border-radius: 5px;
 }
@@ -90,7 +90,7 @@
         border-image-slice: 1;
     }
     .ImageSize {
-        width: 100%;
+        max-width: 500px;
         height: auto;
         margin-bottom: 0px;
         margin-left: 20px;
