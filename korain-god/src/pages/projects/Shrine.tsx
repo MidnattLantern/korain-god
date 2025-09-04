@@ -1,15 +1,16 @@
 import Styles from "./Projects.module.css";
 import ProjectDetail from "../../components/projectDetail/ProjectDetail";
-import Placeholder from "../../assets/other/placeholder-asset.jpg";
+import Large from "../../assets/shrine/korain-shrine-large.png"
+import Small from "../../assets/shrine/korain-shrine-small.png";
+import LargeAlt1 from "../../assets/shrine/korain-shrine-empty-large.png";
+import SmallAlt1 from "../../assets/shrine/korain-shrine-empty-small.png";
 
 const Shrine = () => {
     return (
         <div className={Styles.ProjectView}>
-            <h1>This is a placeholder page</h1>
-            <ProjectDetail title="Shrine" titleAlt1="Placeholder 1" titleAlt2="Placeholder 2"
-            smallAsset={Placeholder} largeAsset={Placeholder} smallFileInfo="test s" largeFileInfo="test l"
-            smallAssetAlt1={Placeholder} largeAssetAlt1={Placeholder} smallFileInfoAlt1="B" largeFileInfoAlt1="A"
-            smallAssetAlt2={Placeholder} largeAssetAlt2={Placeholder} smallFileInfoAlt2="D" largeFileInfoAlt2="C"
+            <ProjectDetail title="Shrine" titleAlt1="Empty"
+            smallAsset={Small} largeAsset={Large} smallFileInfo="PNG 325 KB" largeFileInfo="PNG 3,2 MB"
+            smallAssetAlt1={SmallAlt1} largeAssetAlt1={LargeAlt1} smallFileInfoAlt1="PNG 319 KB" largeFileInfoAlt1="PNG 3,1 MB"
             />
         </div>
     )

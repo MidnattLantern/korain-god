@@ -7,6 +7,8 @@ import SymbolLarge from "../../assets/symbol/downloadable/korain-symbol-large.pn
 import SymbolSmall from "../../assets/symbol/downloadable/korain-symbol-small.jpg";
 import BustPortraitSketchV1Large from "../../assets/portrait/downloadable/korain-bust-portrait-large.png";
 import BustPortraitSketchV1Small from "../../assets/portrait/downloadable/korain-bust-portrait-small.jpg";
+import ShrineLarge from "../../assets/shrine/korain-shrine-large.png";
+import ShrineSmall from "../../assets/shrine/korain-shrine-small.png";
 import { useWindowSize } from "../../hooks/useWInidowSize";
 
 const Home = () => {
@@ -27,8 +29,9 @@ const Home = () => {
             <ClientCredits/>
             <ProjectCard title="Symbol" link="symbol" smallAsset={SymbolSmall} largeAsset={SymbolLarge} largeFileInfo="PNG 7,5 MB"/>
             <ProjectCard title="Portrait" link="portrait" smallAsset={BustPortraitSketchV1Small} largeAsset={BustPortraitSketchV1Large} largeFileInfo="PNG 25,2 MB"/>
+            
+            <ProjectCard title="Shrine" link="shrine" smallAsset={ShrineSmall} largeAsset={ShrineLarge} largeFileInfo="PNG 3,2 MB"/>
             {/*
-            <ProjectCard title="Shrine" link="shrine"/>
             <ProjectCard title="Temple" link="temple"/>
             */}
             {width < 440 && <div className={Styles.BottomPadding}/>}
