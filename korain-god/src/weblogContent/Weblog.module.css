@@ -18,6 +18,10 @@
     margin-bottom: 20px;
 }
 
+.WeblogTitle {
+    text-transform: uppercase;
+}
+
 .WeblogView p,
 .WeblogView li {
     color: rgba(250, 250, 250, 0.8);
@@ -27,6 +31,21 @@
 
 .WeblogView img {
     max-width: 100%;
+}
+
+.CenterContent {
+    text-align: center;
+}
+
+.ShareTwo {
+    display: flex;
+    flex-direction: row;
+}
+.ShareTwo img {
+    width: 50%;
+    height: auto;
+    margin: 5px;
+    object-fit: contain;
 }
 
 @media (min-width: 440px) {

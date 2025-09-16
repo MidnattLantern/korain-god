@@ -84,3 +84,12 @@ button:active {
   box-shadow: inset 0px 0.5px 7.5px var(--color-dark);
   transition: all 0.05s ease;
 }
+
+img {
+  border-radius: 3px;
+}
+
+li {
+  padding-left: 25px;
+  list-style-type: none;
+}
