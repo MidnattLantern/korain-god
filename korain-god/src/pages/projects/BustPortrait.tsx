@@ -6,7 +6,7 @@ import SmallAlt1 from "../../assets/portrait/downloadable/korain-bust-portrait-a
 import LargeAlt2 from "../../assets/portrait/downloadable/korain-bust-portrait-alt2-large.png";
 import SmallAlt2 from "../../assets/portrait/downloadable/korain-bust-portrait-alt2-small.jpg";
 import ProjectDetail from "../../components/projectDetail/ProjectDetail";
-//import PortraitWeblog from "../../weblogContent/Portrait";
+import PortraitWeblog from "../../weblogContent/PortraitWeblog";
 
 const BustPortrait = () => {
     return (
@@ -16,9 +16,14 @@ const BustPortrait = () => {
             smallAssetAlt1={SmallAlt1} largeAssetAlt1={LargeAlt1} smallFileInfoAlt1="JPG 381 KB" largeFileInfoAlt1="PNG 14,5 MB"
             smallAssetAlt2={SmallAlt2} largeAssetAlt2={LargeAlt2} smallFileInfoAlt2="JPG 332 KB" largeFileInfoAlt2="PNG 4,2 MB"
             />
-            {/*
+
             <PortraitWeblog/>
-            */}
+
+            <ProjectDetail title="Portrait" titleAlt1="No vibrant filter" titleAlt2="No colours"
+            smallAsset={Small} largeAsset={Large} smallFileInfo="JPG 393 KB" largeFileInfo="PNG 25,2 MB"
+            smallAssetAlt1={SmallAlt1} largeAssetAlt1={LargeAlt1} smallFileInfoAlt1="JPG 381 KB" largeFileInfoAlt1="PNG 14,5 MB"
+            smallAssetAlt2={SmallAlt2} largeAssetAlt2={LargeAlt2} smallFileInfoAlt2="JPG 332 KB" largeFileInfoAlt2="PNG 4,2 MB"
+            />
         </div>
     )
 };

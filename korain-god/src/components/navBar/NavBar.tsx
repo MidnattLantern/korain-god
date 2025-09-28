@@ -30,7 +30,8 @@ const NavBar = () => {
                 <Link className={Styles.NavLink} to="/symbol">Symbol</Link>
                 <Link className={Styles.NavLink} to="/portrait">Portrait</Link>
                 <Link className={Styles.NavLink} to="/shrine">Shrine</Link>
-                <Link className={Styles.NavLink} to="/temple">Temple</Link>
+                <Link className={Styles.NavLink} to="/temple-interior">Temple Interior</Link>
+                <Link className={Styles.NavLink} to="/temple-exterior">Temple Exterior</Link>
                 <hr className={Styles.HeaderRow}/>
                 <a className={Styles.NavLink} href="https://www.worldanvil.com/w/idoria-yviira" target="_blank">Project Idoria</a>
                 <a className={Styles.NavLink} href="https://github.com/MidnattLantern" target="_blank">Developer's GitHub</a>

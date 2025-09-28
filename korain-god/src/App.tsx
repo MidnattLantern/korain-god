@@ -5,7 +5,7 @@ import Symbol from "./pages/projects/Symbol";
 import BustPortrait from "./pages/projects/BustPortrait";
 import NavBar from "./components/navBar/NavBar";
 import Shrine from "./pages/projects/Shrine";
-import Temple from "./pages/projects/Temple";
+import TempleExterior from "./pages/projects/TempleExterior";
 
 function App() {
 
@@ -19,7 +19,7 @@ function App() {
         <Route path="/symbol" element={<Symbol/>} />
         <Route path="/portrait" element={<BustPortrait/>} />
         <Route path="/shrine" element={<Shrine/>} />
-        <Route path="/temple" element={<Temple/>} />
+        <Route path="/temple-exterior" element={<TempleExterior/>} />
         <Route path="*" element={<h1>Page not found</h1>} />
       </Routes>
       </main>

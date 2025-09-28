@@ -48,6 +48,10 @@
     object-fit: contain;
 }
 
+.SmallHeight {
+    height: 250px;
+}
+
 @media (min-width: 440px) {
     .ChapterView {
     width: 350px;
