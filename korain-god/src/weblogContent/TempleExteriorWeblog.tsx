@@ -12,6 +12,7 @@ import ShapepressFace2Image from "../assets/temple-exterior/weblog/shapepress-fa
 import ShapepressFace3Image from "../assets/temple-exterior/weblog/shapepress-face-3.png";
 import ShapepressCornerSizeImage from "../assets/temple-exterior/weblog/shapepress-corner-size.png";
 import ShapepressUseExampleImage from "../assets/temple-exterior/weblog/shapepress-use-example.png";
+import Final3DRenderImage from "../assets/temple-exterior/weblog/final-3d-render.png";
 import { useState } from "react";
 
 const TempleExteriorWeblog = () => {
@@ -210,9 +211,21 @@ public class Camera : MonoBehaviour
                         `}
                     </code>
                 </pre>
+                <p>I deployed the Unity project as a static WebGL web page and sent the link to my client, where she could move around and find camera shots she liked, then screenshot it.</p>
+                <p>The camera moves with the keys: WASD, left shift and space.</p>
+                <p>The camera rotates with the arrow keys, Q and E.</p>
+                <p>You can see it for yourself via <a href="https://midnattlantern.github.io/display-korain-temple/" target="_blank">{`this link (new tab)`}</a></p>
+
                 <p>There are a couple of mistakes I learned:</p>
                 <ul>I realized such controls are not a problem for Windows users, where you screenshot using the Print Screen key, but Mac users screenshot using Cmd + Shift + 3, interfering with the move camera down key and ruining the shot.</ul>
-                <ul>The transform camera controlls does not take the viewer's camera rotation into account, meaning if and when you rotate the camera 90 or 180 degrees, W does not move forward, D does not go right.</ul>
+                <ul>The move camera controls is not relative to the rotation, meaning when you for instance rotate the camera 90 or 180 degrees, W does not move forward or D does not go right as the user would expect. I'm not sure if hardcoded GetKey methods even is an appropriate to build an intuitive control system, but if you use transform.position and transform.rotation methods instead, you can build a fine camera control system from that.</ul>
+            </Chapter>
+
+            <Chapter>
+                <h1>Rendering image</h1>
+                <p>The render is actually done via Blender using a screenshot from the webpage as a reference.</p>
+                <p>I applied two sun light sources, one main source revealing drop shadows, another source strong enough to counter completely black shadows, but weak enough to not compete with the main source.</p>
+                <img src={Final3DRenderImage} alt="Final3DRenderImage"/>
             </Chapter>
         </div>
     )
