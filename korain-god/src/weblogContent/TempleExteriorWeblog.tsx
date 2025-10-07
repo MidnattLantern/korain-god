@@ -4,8 +4,21 @@ import PointArch2Image from "../assets/temple-exterior/weblog/point-arch-2.png";
 import PointArch3Image from "../assets/temple-exterior/weblog/point-arch-3.png";
 import PointArch4Image from "../assets/temple-exterior/weblog/point-arch-4.png";
 import PointArch5Image from "../assets/temple-exterior/weblog/point-arch-5.png";
+import ShapepressAssetArrayImage from "../assets/temple-exterior/weblog/shapepress-asset-array.png";
+import ShapepressIntersectingShapeImage from "../assets/temple-exterior/weblog/shapepress-intersecting-shape.png";
+import ShapepressCreatedImage from "../assets/temple-exterior/weblog/shapepress-created.png";
+import ShapepressFace1Image from "../assets/temple-exterior/weblog/shapepress-face-1.png";
+import ShapepressFace2Image from "../assets/temple-exterior/weblog/shapepress-face-2.png";
+import ShapepressFace3Image from "../assets/temple-exterior/weblog/shapepress-face-3.png";
+import ShapepressCornerSizeImage from "../assets/temple-exterior/weblog/shapepress-corner-size.png";
+import ShapepressUseExampleImage from "../assets/temple-exterior/weblog/shapepress-use-example.png";
+import { useState } from "react";
 
 const TempleExteriorWeblog = () => {
+
+    const [showUserInputCode, setShowUserInputCode] = useState<boolean>(false);
+    const [showRotateCameraCode, setShowRotateCameraCode] = useState<boolean>(false);
+    const [showCameraCode, setShowCameraCode] = useState<boolean>(false);
 
     const Chapter = ({ children, id }: { children: React.ReactNode; id?: string }) => {
         return <div id={id} className={Styles.ChapterView}>{children}</div>;
@@ -31,7 +44,9 @@ const TempleExteriorWeblog = () => {
                 <h1>Outside model</h1>
                 <p>The scope would cover both an outside and inside point of view. I could resume the current low detailed model and start applying details.</p>
                 <p>For this revision, I applied a grid by grid layout, breaking the architecture down to repeating chunks.</p>
+            </Chapter>
 
+            <Chapter>
                 <h1>Pointed arch</h1>
                 <p>A common architectual element for this scene, providing support for tall buildings, I believe this gothic design fits well for Idoria's high fantasy setting.</p>
                 <div className={Styles.CenterContent}>
@@ -46,6 +61,158 @@ const TempleExteriorWeblog = () => {
                     <p>The pointed arch is finished and can be solidified when ready using the solidify modifier.</p>
                     <img src={PointArch5Image} alt="PointArch5Image" className={Styles.SmallHeight}/>
                 </div>
+            </Chapter>
+
+            <Chapter>
+                <h1>Shape Press</h1>
+                <img src={ShapepressAssetArrayImage} alt="ShapepressAssetArrayImage" className={Styles.SmallHeight}/>
+                <p>Certain array components have a shape facing from one side. But when the array turns at a corner, the shape needs to face from two sides.</p>
+                <p>Using Boolean, I could create a shape press and shape the face for a corner component.</p>
+                <div className={Styles.CenterContent}>
+                    <p>Intersecting a larger cube with one face, then giving the larger cube a difference Boolean modifier, referencing the face:</p>
+                    <img src={ShapepressIntersectingShapeImage} alt="ShapepressIntersectingShapeImage" className={Styles.SmallHeight}/>
+                    <p>Applying the Boolean creates the shape press:</p>
+                    <img src={ShapepressCreatedImage} alt="ShapepressCreatedImage" className={Styles.SmallHeight}/>
+                    <p>Add a new cube with the same dimensions as the component, this will be the corner component:</p>
+                    <img src={ShapepressCornerSizeImage} alt="ShapepressCornerSizeImage" className={Styles.SmallHeight}/>
+                    <p>Intersect the shape presser on one side, give the block a Boolean difference modifier, referencing the shape press, then applying the boolean:</p>
+                    <img src={ShapepressFace1Image} alt="ShapepressFace1Image" className={Styles.MediumHeight}/>
+                    <p>Finally repeat for the second face:</p>
+                    <img src={ShapepressFace2Image} alt="ShapepressFace2Image" className={Styles.MediumHeight}/>
+                </div>
+                <p>This creates the corner asset so that the array pattern can turn around corners:</p>
+                <img src={ShapepressFace3Image} alt="ShapepressFace3Image"/>
+                <img src={ShapepressUseExampleImage} alt="ShapepressUseExampleImage"/>
+            </Chapter>
+
+            <Chapter>
+                <h1>Shooting an angle</h1>
+                <p>The Blender project was exported as an .fbx file, allowing it to be imported and used for a Unity project.</p>
+                <p>I wrote three scripts:</p>
+                <ul>For moving the camera</ul>
+                <button onClick={() => {setShowUserInputCode(!showUserInputCode)}}>toggle code</button>
+                {showUserInputCode &&
+                    <pre className={Styles.CodeBlock}>
+                        <code>{`
+using UnityEngine;
+
+public class UserInput : MonoBehaviour
+{
+    int originX = 0;
+    int originY = 0;
+    int originZ = 0;
+    public Vector3 Transform3DPosition()
+    {
+        Vector3 inputVector = new Vector3(originX, originY, originZ);
+        
+        if (Input.GetKey(KeyCode.W))
+        {
+            inputVector.x++;
+        }
+        if (Input.GetKey(KeyCode.S))
+        {
+            inputVector.x--;
+        }
+        if (Input.GetKey(KeyCode.A))
+        {
+            inputVector.z++;
+        }
+        if (Input.GetKey(KeyCode.D))
+        {
+            inputVector.z--;
+        }
+        if (Input.GetKey(KeyCode.Space))
+        {
+            inputVector.y++;
+        }
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            inputVector.y--;
+        }
+        return inputVector;
+    }
+}
+                        `}</code>
+                    </pre>
+                }
+                <ul>For rotating the camera</ul>
+                <button onClick={() => {setShowRotateCameraCode(!showRotateCameraCode)}}>toggle code</button>
+                {showRotateCameraCode &&
+                    <pre className={Styles.CodeBlock}>
+                        <code>{`
+using System.Runtime.InteropServices.WindowsRuntime;
+using UnityEngine;
+
+public class RotateCameraInput : MonoBehaviour
+{
+    int originX = 0;
+    int originY = 0;
+    int originZ = 0;
+    public Vector3 Transform3DRotation()
+    {
+        Vector3 inputVector = new Vector3(originX, originY, originZ);
+
+        if (Input.GetKey(KeyCode.UpArrow)) inputVector.x++;
+        if (Input.GetKey(KeyCode.DownArrow)) inputVector.x--;
+        if (Input.GetKey(KeyCode.RightArrow)) inputVector.y++;
+        if (Input.GetKey(KeyCode.LeftArrow)) inputVector.y--;
+        if (Input.GetKey(KeyCode.Q)) inputVector.z++;
+        if (Input.GetKey(KeyCode.E)) inputVector.z--;
+
+        return inputVector;
+    }
+}
+
+                        `}</code>
+                    </pre>
+                }
+                <ul>For making the camera itself able to listen to inputs</ul>
+                <button onClick={() => {setShowCameraCode(!showCameraCode)}}>toggle code</button>
+                {showCameraCode &&
+                    <pre className={Styles.CodeBlock}>
+                        <code>
+                        {`
+using UnityEngine;
+
+public class Camera : MonoBehaviour
+{
+    [SerializeField] private UserInput userInputFunction;
+    [SerializeField] private RotateCameraInput rotateCameraInputFunction;
+
+    float moveSpeed = 0.25f;
+    float rotateSpeed = 1f;
+    void Start()
+    {
+        
+    }
+
+    void Update()
+    {
+        Vector3 inputVector = userInputFunction.Transform3DPosition();
+        inputVector = inputVector.normalized;
+        transform.position += inputVector * moveSpeed;
+
+        Vector3 inputRotation = rotateCameraInputFunction.Transform3DRotation();
+        transform.Rotate(inputRotation * rotateSpeed);
+    }
+}
+                        `}
+                        </code>
+                    </pre>
+                }
+                <p>The code for moving and rotating are connected to the camera through the code of the camera's serializer fields:</p>
+                <pre>
+                    <code>
+                        {`
+// Camera.cs
+    [SerializeField] private UserInput userInputFunction;                 // Move camera
+    [SerializeField] private RotateCameraInput rotateCameraInputFunction; // Rotate camera
+                        `}
+                    </code>
+                </pre>
+                <p>There are a couple of mistakes I learned:</p>
+                <ul>I realized such controls are not a problem for Windows users, where you screenshot using the Print Screen key, but Mac users screenshot using Cmd + Shift + 3, interfering with the move camera down key and ruining the shot.</ul>
+                <ul>The transform camera controlls does not take the viewer's camera rotation into account, meaning if and when you rotate the camera 90 or 180 degrees, W does not move forward, D does not go right.</ul>
             </Chapter>
         </div>
     )
