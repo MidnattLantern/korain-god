@@ -211,7 +211,7 @@ public class Camera : MonoBehaviour
                         `}
                     </code>
                 </pre>
-                <p>I deployed the Unity project as a static WebGL web page and sent the link to my client, where she could move around and find camera shots she liked, then screenshot it.</p>
+                <p>I deployed the Unity project as a static WebGL web page hosted on GitHub Pages, and sent the link to my client, where she could move around and find camera shots she liked, then screenshot it.</p>
                 <p>The camera moves with the keys: WASD, left shift and space.</p>
                 <p>The camera rotates with the arrow keys, Q and E.</p>
                 <p>You can see it for yourself via <a href="https://midnattlantern.github.io/display-korain-temple/" target="_blank">{`this link (new tab)`}</a></p>
@@ -226,6 +226,15 @@ public class Camera : MonoBehaviour
                 <p>The render is actually done via Blender using a screenshot from the webpage as a reference.</p>
                 <p>I applied two sun light sources, one main source revealing drop shadows, another source strong enough to counter completely black shadows, but weak enough to not compete with the main source.</p>
                 <img src={Final3DRenderImage} alt="Final3DRenderImage"/>
+            </Chapter>
+
+            <Chapter>
+                <h1>Painting</h1>
+                <p>Given the heavy architecture and shadows of the rendition, I decided it would be best to use it as a core foundation component of the painting, rather than something I'd abandon once I've replaced it with traced layers.</p>
+                <p>{`First, textures. Clip Studio offer a marketplace with assets anyone with a Clip Studio license can use. The main texture turning stone into stone, is "playground floor 2", featured on the "Texture Pack Vol. 2-1" package (ID: 2089580). The texture layer appears above the 3D rendition layer with low opacity.`}</p>
+                <p>{`The second material is "Marble Floor" from the same package, tuned with more contrast. The marble material adds variation to the courthouse building with its sleeker texture and lighter color.`}</p>
+                <p>Above the rendition and texture layer, are a highlights and a shadows layers, manually painted with my best brush. The intention is to empasize the shapes and lighting and break the renditions sanitized feel, making it feel more handcrafted.</p>
+                <p>{`The sky reflection on the windows is actually a photo asset: "Emo fish-eye lens Sky Set 1" (ID: 2068184). The asset clips to the main window layer with a fading gradient.`}</p>
             </Chapter>
         </div>
     )
