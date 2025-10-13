@@ -1,4 +1,5 @@
 import Styles from "./Weblog.module.css";
+import { useWindowSize } from "../hooks/useWInidowSize";
 import ArchitectureImage from "../assets/temple-exterior/weblog/architecture.png";
 import PointArch1Image from "../assets/temple-exterior/weblog/point-arch-1.png";
 import PointArch2Image from "../assets/temple-exterior/weblog/point-arch-2.png";
@@ -22,7 +23,7 @@ import ShiftImage from "../assets/temple-exterior/weblog/shift.png";
 import { useState } from "react";
 
 const TempleExteriorWeblog = () => {
-
+    const { width } = useWindowSize();
     const [showUserInputCode, setShowUserInputCode] = useState<boolean>(false);
     const [showRotateCameraCode, setShowRotateCameraCode] = useState<boolean>(false);
     const [showCameraCode, setShowCameraCode] = useState<boolean>(false);
@@ -37,7 +38,7 @@ const TempleExteriorWeblog = () => {
             <Chapter>
                 <p>Korain doesn't have his own temple, his worship takes place in locations associated with law and justice within the culture of the world of Idoria.</p>
                 <p>For Korain's place of worship, we decided to portray him within a courthouse.</p>
-                <p>Korain doesn't boast himself as other gods, he remain blending into everyday life, to encourage people focus more of his mission in justice and less in divine worship. Hence the design desicion moreso feature Korain blending in to a justice setting, than taking the center of the spotlight.</p>
+                <p>Korain doesn't boast himself as other gods, he remain blending into everyday life, to encourage people focus more of his mission in justice and less in divine worship. Hence the design decision more so feature Korain blending in to a justice setting, than taking the center of the spotlight.</p>
             </Chapter>
 
             <Chapter>
@@ -49,7 +50,7 @@ const TempleExteriorWeblog = () => {
 
             <Chapter>
                 <h1>Pointed Arch</h1>
-                <p>A common architectual element for this scene, providing support for tall buildings, I believe this gothic design fits well for Idoria's high fantasy setting.</p>
+                <p>A common architectural element for this scene, providing support for tall buildings, I believe this gothic design fits well for Idoria's high fantasy setting.</p>
                 <div className={Styles.CenterContent}>
                     <p>A pointed arch can be generated from a circle mesh.</p>
                     <img src={PointArch1Image} alt="PointArch1Image" className={Styles.SmallHeight}/>
@@ -57,7 +58,7 @@ const TempleExteriorWeblog = () => {
                     <img src={PointArch2Image} alt="PointArch2Image" className={Styles.SmallHeight}/>
                     <p>Two arch frames are left, move them close until the top vertices intersect, select the two, press M, then "At Center"</p>
                     <img src={PointArch3Image} alt="PointArch3Image" className={Styles.SmallHeight}/>
-                    <p>Still in edit mode, use the "Exrude Region", don't mind if the handle follow a bad direction, the shape can still be extruded to any direction.</p>
+                    <p>Still in edit mode, use the "Extrude Region", don't mind if the handle follow a bad direction, the shape can still be extruded to any direction.</p>
                     <img src={PointArch4Image} alt="PointArch4Image" className={Styles.SmallHeight}/>
                     <p>The pointed arch is finished and can be solidified when ready using the solidify modifier.</p>
                     <img src={PointArch5Image} alt="PointArch5Image" className={Styles.SmallHeight}/>
@@ -89,9 +90,10 @@ const TempleExteriorWeblog = () => {
             <Chapter>
                 <h1>Shooting an Angle</h1>
                 <p>The Blender project was exported as an .fbx file, allowing it to be imported and used for a Unity project.</p>
+                { width > 1024 && <>
                 <p>I wrote three scripts:</p>
                 <ul>For moving the camera</ul>
-                <button onClick={() => {setShowUserInputCode(!showUserInputCode)}}>toggle code</button>
+                <button onClick={() => {setShowUserInputCode(!showUserInputCode)}}>{showUserInputCode ? "Hide" : "Show"}</button>
                 {showUserInputCode &&
                     <pre className={Styles.CodeBlock}>
                         <code>{`
@@ -137,7 +139,7 @@ public class UserInput : MonoBehaviour
                     </pre>
                 }
                 <ul>For Rotating the Camera</ul>
-                <button onClick={() => {setShowRotateCameraCode(!showRotateCameraCode)}}>toggle code</button>
+                <button onClick={() => {setShowRotateCameraCode(!showRotateCameraCode)}}>{showRotateCameraCode ? "Hide" : "Show"}</button>
                 {showRotateCameraCode &&
                     <pre className={Styles.CodeBlock}>
                         <code>{`
@@ -168,7 +170,7 @@ public class RotateCameraInput : MonoBehaviour
                     </pre>
                 }
                 <ul>For making the camera itself able to listen to inputs</ul>
-                <button onClick={() => {setShowCameraCode(!showCameraCode)}}>toggle code</button>
+                <button onClick={() => {setShowCameraCode(!showCameraCode)}}>{showCameraCode ? "Hide" : "Show"}</button>
                 {showCameraCode &&
                     <pre className={Styles.CodeBlock}>
                         <code>
@@ -211,6 +213,7 @@ public class Camera : MonoBehaviour
                         `}
                     </code>
                 </pre>
+</>}
                 <p>I deployed the Unity project as a static WebGL web page hosted on GitHub Pages, and sent the link to my client, where she could move around and find camera shots she liked, then screenshot it.</p>
                 <p>The camera moves with the keys: WASD, left shift and space.</p>
                 <p>The camera rotates with the arrow keys, Q and E.</p>
@@ -233,19 +236,19 @@ public class Camera : MonoBehaviour
                 <p>Given the heavy architecture and shadows of the rendition, I decided to use it as a core foundation component of the painting, rather than something I'd abandon once I've replaced it with traced layers.</p>
                 <p>{`First, textures. Clip Studio offer a marketplace with assets anyone with a Clip Studio license can use. The main texture turning stone into stone, is "playground floor 2", featured on the "Texture Pack Vol. 2-1" package (ID: 2089580). The texture layer appears above the 3D rendition layer with low opacity.`}</p>
                 <p>{`The second major material is "Marble Floor" from the same package, tuned with more contrast. The marble material adds variation to the courthouse building with its sleeker texture and lighter color.`}</p>
-                <p>Above the rendition and texture layer, are a highlights and a shadows layers, manually painted with my best brush. The intention is to empasize the shapes and lighting and break the renditions sanitized feel, making it feel more handcrafted.</p>
+                <p>Above the rendition and texture layer, are a highlights and a shadows layers, manually painted with my best brush. The intention is to emphasize the shapes and lighting and break the renditions sanitized feel, making it feel more handcrafted.</p>
                 <img src={BeforeAfterImage} alt="BeforeAfterImage"/>
-                <p>I shifted away from greyscale with a level correction layer. The rendition was slowly shifting away from its initial sanitized 3D feel, from here, I needed to apply more asset overlayers and hand drawn details.</p>
+                <p>I shifted away from grayscale with a level correction layer. The rendition was slowly shifting away from its initial sanitized 3D feel, from here, I needed to apply more asset overlays and hand drawn details.</p>
                 <img src={UnsanitizedImage} alt="UnsanitizedImage"/>
                 <p>{`The sky reflection on the windows is actually a photo asset: "Emo fish-eye lens Sky Set 1" (ID: 2068184). The asset clips to the main window layer with a fading gradient.`}</p>
-                <p>To seperate each architectual component from each other, such as the left plateau, or the right bridge underneath the courthouse, I added a soft mist where they are least connected to each other. This makes each component more indipendent.</p>
+                <p>To separate each architectural component from each other, such as the left plateau, or the right bridge underneath the courthouse, I added a soft mist where they are least connected to each other. This makes each component more independent.</p>
                 <div className={Styles.CenterContent}>
                     <img src={NoShiftImage} alt="NoShiftImage"className={Styles.MediumHeight} />
                     <img src={ShiftImage} alt="ShiftImage"className={Styles.MediumHeight} />
                 </div>
             </Chapter>
             <Chapter>
-                <p>The final results showcase the courthouse, the vocal point with more vibrancy and variation in colours, leaving the enviroment with less details.</p>
+                <p>The final results showcase the courthouse, the vocal point with more vibrancy and variation in colors, leaving the environment with less details.</p>
             </Chapter>
         </div>
     )

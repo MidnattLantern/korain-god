@@ -1,4 +1,5 @@
 import Styles from "./Projects.module.css";
+import { useWindowSize } from "../../hooks/useWInidowSize";
 import ProjectDetail from "../../components/projectDetail/ProjectDetail";
 import Large from "../../assets/temple-exterior/downloadable/korain-temple-exterior-large.png";
 import Small from "../../assets/temple-exterior/downloadable/korain-temple-exterior-small.jpg";
@@ -7,6 +8,7 @@ import SmallAlt1 from "../../assets/temple-exterior/downloadable/korain-temple-e
 import TempleExteriorWeblog from "../../weblogContent/TempleExteriorWeblog";
 
 const Temple = () => {
+    const { width } = useWindowSize();
     return (
         <div className={Styles.ProjectView}>
             <ProjectDetail title="Temple Exterior" titleAlt1="No filter"
@@ -14,6 +16,7 @@ const Temple = () => {
             smallAssetAlt1={SmallAlt1} largeAssetAlt1={LargeAlt1} smallFileInfoAlt1="JPG 300 KB" largeFileInfoAlt1="PNG 12 MB"
             />
 
+            { width > 1024 && <img src={Small} alt="Full image for Temple Exterior" className={Styles.FullImageSize}/>}
             <TempleExteriorWeblog />
 
             <ProjectDetail title="Temple Exterior" titleAlt1="No filter"

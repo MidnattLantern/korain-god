@@ -7,3 +7,10 @@
     overflow-x: hidden;
     overflow-y: scroll;
 }
+
+@media (min-width: 1024px) {
+    .FullImageSize {
+        width: 940px;
+        margin-bottom: 100px;
+    }
+}
