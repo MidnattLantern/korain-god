@@ -10,7 +10,6 @@
     margin-top: 20px;
     backdrop-filter: blur(15px);
     padding-bottom: 10px;
-
     border-bottom: 1.5px solid transparent;
     border-image: linear-gradient(to right, rgba(0,0,0,0), var(--color-border), rgba(0,0,0,0));
     border-image-slice: 1;
@@ -48,8 +47,8 @@
         justify-content:left;
         min-width: 80vw;
         max-width: 80vw;
-        min-height: 40vw;
-        max-height: 40vw;
+        min-height: 50vw;
+        max-height: 50vw;
         flex-direction: row;
         box-shadow: inset 0px 0px 15px var(--color-dark);
         padding-bottom: 0vw;
@@ -63,7 +62,7 @@
         justify-content: center;
         align-items: center;
         overflow: visible;
-        width: 15%;
+        width: 10vw;
         height: 100%;
     }
     .Title {
@@ -73,20 +72,27 @@
     .ImageAndNavigationContainer {
         display: flex;
         flex-direction: column;
-        width: 85%;
-        height: auto;
+        width: 70vw;
+        min-height: inherit;
+        max-height: inherit;
         overflow: hidden;
         margin-top: 0vw;
         margin-right: 0vw;
+        justify-content: space-between;
     }
     .ImageSize {
         width: auto;
-        height: 32vw;
-        margin-top: 0vw;
+        min-height: calc(50vw - 8vw);
+        max-height: calc(50vw - 8vw);
         object-fit: contain;
         border-radius: 0vw;
+        margin-top: 1vw;
+        margin-right: 1vw;
         margin-bottom: 0vw;
         border-radius: 0.25vw;
+    }
+    .ImageSizeUseFullSpace {
+        object-fit: cover;
     }
     .ButtonsView {
         display: flex;
@@ -94,7 +100,7 @@
         align-items: center;
         margin: 0vw;
         padding: 0vw;
-        height: 6vw;
+        height: 7vw;
     }
     .ButtonSize {
         min-width: 20vw;
@@ -112,25 +118,37 @@
     .ProjectCardView {
         min-width: 800px;
         max-width: 800px;
-        min-height: 400px;
-        max-height: 400px;
+        min-height: 500px;
+        max-height: 500px;
+    }
+    .TitleContainer {
+        width: 100px;
     }
     .Title {
         font-size: 60px;
     }
     .ImageAndNavigationContainer {
-        margin-top: 10px;
-        margin-right: 10px;
-        height: 390px;
+        margin-top: 0px;
+        margin-right: 0px;
+        min-height: inherit;
+        max-height: inherit;
     }
     .ImageSize {
         width: auto;
-        height: 320px;
-        margin-top: 0px;
+        min-height: calc(500px - 80px);
+        max-height: calc(500px - 80px);
+        margin-top: 10px;
+        margin-right: 10px;
         object-fit: contain;
         border-radius: 0px;
         margin-bottom: 0px;
         border-radius: 0.25px;
+    }
+    .ImageSizeUseFullSpace {
+        object-fit: cover;
+    }
+    .ButtonsView {
+        height: 70px;
     }
     .ButtonSize {
         min-width: 200px;

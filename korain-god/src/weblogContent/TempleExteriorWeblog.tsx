@@ -1,4 +1,5 @@
 import Styles from "./Weblog.module.css";
+import ArchitectureImage from "../assets/temple-exterior/weblog/architecture.png";
 import PointArch1Image from "../assets/temple-exterior/weblog/point-arch-1.png";
 import PointArch2Image from "../assets/temple-exterior/weblog/point-arch-2.png";
 import PointArch3Image from "../assets/temple-exterior/weblog/point-arch-3.png";
@@ -13,6 +14,11 @@ import ShapepressFace3Image from "../assets/temple-exterior/weblog/shapepress-fa
 import ShapepressCornerSizeImage from "../assets/temple-exterior/weblog/shapepress-corner-size.png";
 import ShapepressUseExampleImage from "../assets/temple-exterior/weblog/shapepress-use-example.png";
 import Final3DRenderImage from "../assets/temple-exterior/weblog/final-3d-render.png";
+
+import BeforeAfterImage from "../assets/temple-exterior/weblog/before-after.png";
+import UnsanitizedImage from "../assets/temple-exterior/weblog/unsanitized.png";
+import NoShiftImage from "../assets/temple-exterior/weblog/no-shift.png";
+import ShiftImage from "../assets/temple-exterior/weblog/shift.png";
 import { useState } from "react";
 
 const TempleExteriorWeblog = () => {
@@ -27,6 +33,7 @@ const TempleExteriorWeblog = () => {
 
     return (
         <div className={Styles.WeblogView}>
+            <h1>MAKING OF THE EXTERIOR</h1>
             <Chapter>
                 <p>Korain doesn't have his own temple, his worship takes place in locations associated with law and justice within the culture of the world of Idoria.</p>
                 <p>For Korain's place of worship, we decided to portray him within a courthouse.</p>
@@ -34,21 +41,14 @@ const TempleExteriorWeblog = () => {
             </Chapter>
 
             <Chapter>
-                <h1>3D layout</h1>
-                <p>I mapped out the architecture in Blender. Before deciding whether we should go for an outside or inside shot, the overall shapes and layout was done minimally.</p>
-                <p>For a potential outdoors scene, I made the courthouse off-centereed in a asymetrical high fantasy city setting, to shift away the boasting elements and highlight Korain's desire to blend in and fade into everyday life.</p>
-                <p>The mesh was exported as an FBX file, imported to a Unity project, where I made a couple scripts controlling the camera.</p>
-                <p>The Unity project was exported to a WebGL format, the format used to deploy to a web page.</p>
-            </Chapter>
-
-            <Chapter>
-                <h1>Outside model</h1>
+                <h1>3D Layout</h1>
                 <p>The scope would cover both an outside and inside point of view. I could resume the current low detailed model and start applying details.</p>
                 <p>For this revision, I applied a grid by grid layout, breaking the architecture down to repeating chunks.</p>
+                <img src={ArchitectureImage} alt="ArchitectureImage"/>
             </Chapter>
 
             <Chapter>
-                <h1>Pointed arch</h1>
+                <h1>Pointed Arch</h1>
                 <p>A common architectual element for this scene, providing support for tall buildings, I believe this gothic design fits well for Idoria's high fantasy setting.</p>
                 <div className={Styles.CenterContent}>
                     <p>A pointed arch can be generated from a circle mesh.</p>
@@ -87,7 +87,7 @@ const TempleExteriorWeblog = () => {
             </Chapter>
 
             <Chapter>
-                <h1>Shooting an angle</h1>
+                <h1>Shooting an Angle</h1>
                 <p>The Blender project was exported as an .fbx file, allowing it to be imported and used for a Unity project.</p>
                 <p>I wrote three scripts:</p>
                 <ul>For moving the camera</ul>
@@ -136,7 +136,7 @@ public class UserInput : MonoBehaviour
                         `}</code>
                     </pre>
                 }
-                <ul>For rotating the camera</ul>
+                <ul>For Rotating the Camera</ul>
                 <button onClick={() => {setShowRotateCameraCode(!showRotateCameraCode)}}>toggle code</button>
                 {showRotateCameraCode &&
                     <pre className={Styles.CodeBlock}>
@@ -222,7 +222,7 @@ public class Camera : MonoBehaviour
             </Chapter>
 
             <Chapter>
-                <h1>Rendering image</h1>
+                <h1>Rendering Image</h1>
                 <p>The render is actually done via Blender using a screenshot from the webpage as a reference.</p>
                 <p>I applied two sun light sources, one main source revealing drop shadows, another source strong enough to counter completely black shadows, but weak enough to not compete with the main source.</p>
                 <img src={Final3DRenderImage} alt="Final3DRenderImage"/>
@@ -230,11 +230,22 @@ public class Camera : MonoBehaviour
 
             <Chapter>
                 <h1>Painting</h1>
-                <p>Given the heavy architecture and shadows of the rendition, I decided it would be best to use it as a core foundation component of the painting, rather than something I'd abandon once I've replaced it with traced layers.</p>
+                <p>Given the heavy architecture and shadows of the rendition, I decided to use it as a core foundation component of the painting, rather than something I'd abandon once I've replaced it with traced layers.</p>
                 <p>{`First, textures. Clip Studio offer a marketplace with assets anyone with a Clip Studio license can use. The main texture turning stone into stone, is "playground floor 2", featured on the "Texture Pack Vol. 2-1" package (ID: 2089580). The texture layer appears above the 3D rendition layer with low opacity.`}</p>
-                <p>{`The second material is "Marble Floor" from the same package, tuned with more contrast. The marble material adds variation to the courthouse building with its sleeker texture and lighter color.`}</p>
+                <p>{`The second major material is "Marble Floor" from the same package, tuned with more contrast. The marble material adds variation to the courthouse building with its sleeker texture and lighter color.`}</p>
                 <p>Above the rendition and texture layer, are a highlights and a shadows layers, manually painted with my best brush. The intention is to empasize the shapes and lighting and break the renditions sanitized feel, making it feel more handcrafted.</p>
+                <img src={BeforeAfterImage} alt="BeforeAfterImage"/>
+                <p>I shifted away from greyscale with a level correction layer. The rendition was slowly shifting away from its initial sanitized 3D feel, from here, I needed to apply more asset overlayers and hand drawn details.</p>
+                <img src={UnsanitizedImage} alt="UnsanitizedImage"/>
                 <p>{`The sky reflection on the windows is actually a photo asset: "Emo fish-eye lens Sky Set 1" (ID: 2068184). The asset clips to the main window layer with a fading gradient.`}</p>
+                <p>To seperate each architectual component from each other, such as the left plateau, or the right bridge underneath the courthouse, I added a soft mist where they are least connected to each other. This makes each component more indipendent.</p>
+                <div className={Styles.CenterContent}>
+                    <img src={NoShiftImage} alt="NoShiftImage"className={Styles.MediumHeight} />
+                    <img src={ShiftImage} alt="ShiftImage"className={Styles.MediumHeight} />
+                </div>
+            </Chapter>
+            <Chapter>
+                <p>The final results showcase the courthouse, the vocal point with more vibrancy and variation in colours, leaving the enviroment with less details.</p>
             </Chapter>
         </div>
     )

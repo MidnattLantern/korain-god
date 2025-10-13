@@ -6,6 +6,7 @@ import BustPortrait from "./pages/projects/BustPortrait";
 import NavBar from "./components/navBar/NavBar";
 import Shrine from "./pages/projects/Shrine";
 import TempleExterior from "./pages/projects/TempleExterior";
+import TempleInterior from "./pages/projects/TempleInterior";
 
 function App() {
 
@@ -20,6 +21,7 @@ function App() {
         <Route path="/portrait" element={<BustPortrait/>} />
         <Route path="/shrine" element={<Shrine/>} />
         <Route path="/temple-exterior" element={<TempleExterior/>} />
+        <Route path="/temple-interior" element={<TempleInterior/>}/>
         <Route path="*" element={<h1>Page not found</h1>} />
       </Routes>
       </main>

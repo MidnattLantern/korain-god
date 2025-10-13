@@ -33,7 +33,7 @@ const Home = () => {
             <ProjectCard title="Portrait" link="portrait" smallAsset={BustPortraitSketchV1Small} largeAsset={BustPortraitSketchV1Large} largeFileInfo="PNG 25,2 MB"/>
             
             <ProjectCard title="Shrine" link="shrine" smallAsset={ShrineSmall} largeAsset={ShrineLarge} largeFileInfo="PNG 3,2 MB"/>
-            <ProjectCard title="Exterior" link="temple-exterior" smallAsset={TempleExteriorSmall} largeAsset={TempleExteriorLarge} largeFileInfo="PNG 10 MB"/>
+            <ProjectCard title="Exterior" link="temple-exterior" smallAsset={TempleExteriorSmall} largeAsset={TempleExteriorLarge} largeFileInfo="PNG 10 MB" useFullSpace={true}/>
             {width < 440 && <div className={Styles.BottomPadding}/>}
 
         </div>

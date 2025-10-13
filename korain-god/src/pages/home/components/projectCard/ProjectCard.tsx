@@ -8,9 +8,10 @@ type ProjectCardProps = {
     smallAsset?: string;
     largeAsset?: string;
     largeFileInfo?: string;
+    useFullSpace?: boolean
 };
 
-const ProjectCard = ({title, link, smallAsset, largeAsset, largeFileInfo} : ProjectCardProps) => {
+const ProjectCard = ({title, link, smallAsset, largeAsset, largeFileInfo, useFullSpace} : ProjectCardProps) => {
     const { width } = useWindowSize();
 
     const PhoneView = () => {
@@ -29,8 +30,8 @@ const ProjectCard = ({title, link, smallAsset, largeAsset, largeFileInfo} : Proj
             <div className={Styles.TitleContainer}>
                 <h1 className={Styles.Title}>{title}</h1>
             </div>
-            <div className={Styles.ImageAndNavigationContainer}>
-                <img className={Styles.ImageSize} src={smallAsset} alt={"Work in progress"}/>
+            <div className={`${Styles.ImageAndNavigationContainer}`}>
+                <img className={`${Styles.ImageSize} ${useFullSpace && Styles.ImageSizeUseFullSpace}`} src={smallAsset} alt={"Work in progress"}/>
                 <div className={Styles.ButtonsView}>
                     <a href={largeAsset} download={"Large"}><button className={Styles.ButtonSize}>{"↓" + (largeFileInfo ? ` as ${largeFileInfo}` : "")}</button></a>
                     <Link to={`/${link}`}><button className={`${Styles.OpenButton} ${Styles.ButtonSize}`}>{"Open →"}</button></Link>
@@ -40,7 +41,7 @@ const ProjectCard = ({title, link, smallAsset, largeAsset, largeFileInfo} : Proj
     }
 
     return(
-        <div className={Styles.ProjectCardView}>
+        <div className={`${Styles.ProjectCardView}`}>
             {width < 440 ? <PhoneView/> : <LargeView/>}
         </div>
     )
