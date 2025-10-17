@@ -1,6 +1,7 @@
 import Styles from "./Projects.module.css";
 import ProjectDetail from "../../components/projectDetail/ProjectDetail";
 import Placeholder from "../../assets/other/placeholder-asset.jpg";
+import TempleInteriorWeblog from "../../weblogContent/TempleInteriorWeblog";
 
 const TempleInterior = () => {
     return (
@@ -9,6 +10,8 @@ const TempleInterior = () => {
             <ProjectDetail title="placeholder" titleAlt1="placeholder"
             smallAsset={Placeholder} largeAsset={Placeholder} smallFileInfo="small file info" largeFileInfo="large file info"
             />
+
+            <TempleInteriorWeblog />
         </div>
     )
 };

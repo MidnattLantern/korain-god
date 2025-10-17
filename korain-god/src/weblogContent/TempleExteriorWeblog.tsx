@@ -21,6 +21,7 @@ import UnsanitizedImage from "../assets/temple-exterior/weblog/unsanitized.png";
 import NoShiftImage from "../assets/temple-exterior/weblog/no-shift.png";
 import ShiftImage from "../assets/temple-exterior/weblog/shift.png";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const TempleExteriorWeblog = () => {
     const { width } = useWindowSize();
@@ -222,6 +223,8 @@ public class Camera : MonoBehaviour
                 <p>There are a couple of mistakes I learned:</p>
                 <ul>I realized such controls are not a problem for Windows users, where you screenshot using the Print Screen key, but Mac users screenshot using Cmd + Shift + 3, interfering with the move camera down key and ruining the shot.</ul>
                 <ul>The move camera controls is not relative to the rotation, meaning when you for instance rotate the camera 90 or 180 degrees, W does not move forward or D does not go right as the user would expect. I'm not sure if hardcoded GetKey methods even is an appropriate to build an intuitive control system, but if you use transform.position and transform.rotation methods instead, you can build a fine camera control system from that.</ul>
+
+                <p>The project diverges from this point, the rest of this page will be about the exterior. To read about the interior, <Link to="/temple-interior">click here.</Link></p>
             </Chapter>
 
             <Chapter>
