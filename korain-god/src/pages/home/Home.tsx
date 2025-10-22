@@ -12,6 +12,7 @@ import ShrineSmall from "../../assets/shrine/korain-shrine-small.png";
 import TempleExteriorLarge from "../../assets/temple-exterior/downloadable/korain-temple-exterior-large.png";
 import TempleExteriorSmall from "../../assets/temple-exterior/downloadable/korain-temple-exterior-small.jpg";
 import { useWindowSize } from "../../hooks/useWInidowSize";
+import Footer from "../../components/footer/Footer";
 
 const Home = () => {
     const { width } = useWindowSize();
@@ -34,8 +35,8 @@ const Home = () => {
             
             <ProjectCard title="Shrine" link="shrine" smallAsset={ShrineSmall} largeAsset={ShrineLarge} largeFileInfo="PNG 3,2 MB"/>
             <ProjectCard title="Exterior" link="temple-exterior" smallAsset={TempleExteriorSmall} largeAsset={TempleExteriorLarge} largeFileInfo="PNG 10 MB" useFullSpace={true}/>
+            <Footer/>
             {width < 440 && <div className={Styles.BottomPadding}/>}
-
         </div>
     )
 };

@@ -6,6 +6,7 @@ import Small from "../../assets/temple-exterior/downloadable/korain-temple-exter
 import LargeAlt1 from "../../assets/temple-exterior/downloadable/korain-temple-exterior-alt1-large.png";
 import SmallAlt1 from "../../assets/temple-exterior/downloadable/korain-temple-exterior-alt1-small.jpg";
 import TempleExteriorWeblog from "../../weblogContent/TempleExteriorWeblog";
+import Footer from "../../components/footer/Footer";
 
 const Temple = () => {
     const { width } = useWindowSize();
@@ -23,7 +24,7 @@ const Temple = () => {
             smallAsset={Small} largeAsset={Large} smallFileInfo="JPG 315 KB" largeFileInfo="PNG 10 MB"
             smallAssetAlt1={SmallAlt1} largeAssetAlt1={LargeAlt1} smallFileInfoAlt1="JPG 300 KB" largeFileInfoAlt1="PNG 12 MB"
             />
-
+            <Footer/>
         </div>
     )
 };

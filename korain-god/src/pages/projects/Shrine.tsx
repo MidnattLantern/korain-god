@@ -4,6 +4,7 @@ import Large from "../../assets/shrine/korain-shrine-large.png"
 import Small from "../../assets/shrine/korain-shrine-small.png";
 import LargeAlt1 from "../../assets/shrine/korain-shrine-empty-large.png";
 import SmallAlt1 from "../../assets/shrine/korain-shrine-empty-small.png";
+import Footer from "../../components/footer/Footer";
 
 const Shrine = () => {
     return (
@@ -12,6 +13,7 @@ const Shrine = () => {
             smallAsset={Small} largeAsset={Large} smallFileInfo="PNG 325 KB" largeFileInfo="PNG 3,2 MB"
             smallAssetAlt1={SmallAlt1} largeAssetAlt1={LargeAlt1} smallFileInfoAlt1="PNG 319 KB" largeFileInfoAlt1="PNG 3,1 MB"
             />
+            <Footer/>
         </div>
     )
 };

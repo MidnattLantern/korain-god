@@ -2,6 +2,7 @@ import Styles from "./Projects.module.css";
 import ProjectDetail from "../../components/projectDetail/ProjectDetail";
 import Placeholder from "../../assets/other/placeholder-asset.jpg";
 import TempleInteriorWeblog from "../../weblogContent/TempleInteriorWeblog";
+import Footer from "../../components/footer/Footer";
 
 const TempleInterior = () => {
     return (
@@ -12,6 +13,7 @@ const TempleInterior = () => {
             />
 
             <TempleInteriorWeblog />
+            <Footer/>
         </div>
     )
 };
