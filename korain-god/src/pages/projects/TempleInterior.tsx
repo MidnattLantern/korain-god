@@ -1,19 +1,21 @@
 import Styles from "./Projects.module.css";
+import { useWindowSize } from "../../hooks/useWInidowSize";
 import ProjectDetail from "../../components/projectDetail/ProjectDetail";
-import Placeholder from "../../assets/other/placeholder-asset.jpg";
-import TempleInteriorWeblog from "../../weblogContent/TempleInteriorWeblog";
-import Footer from "../../components/footer/Footer";
+import Large from "../../assets/temple-interior/downloadable/korain-temple-interior-large.png";
+import Small from "../../assets/temple-interior/downloadable/korain-temple-interior-small.jpg";
+//import TempleInteriorWeblog from "../../weblogContent/TempleInteriorWeblog";
+//import Footer from "../../components/footer/Footer";
 
 const TempleInterior = () => {
+    const { width } = useWindowSize();
     return (
         <div className={Styles.ProjectView}>
-            <h1>Under development</h1>
-            <ProjectDetail title="placeholder" titleAlt1="placeholder"
-            smallAsset={Placeholder} largeAsset={Placeholder} smallFileInfo="small file info" largeFileInfo="large file info"
+            <ProjectDetail title="Temple Interior"
+            smallAsset={Small} largeAsset={Large} smallFileInfo="JPG 268 KB" largeFileInfo="PNG 12 MB"
             />
 
-            <TempleInteriorWeblog />
-            <Footer/>
+            { width > 1024 && <img src={Small} alt="Full image for Temple Interior" className={Styles.FullImageSize}/>}
+
         </div>
     )
 };
