@@ -112,7 +112,7 @@ const Chapter = ({ children, id }: { children: React.ReactNode; id?: string }) =
                     <img src={AffinityChannels} alt={"Couldn't load image"}/>
                     <img src={LensDistortionImage} alt={"Couldn't load image"}/>
                 </div>
-                <p>{`I'd like to encourage you to visit Yviira's project on WordAnvil (Project Idoria), where you can read about the lore behind this symbol.`}</p>
+                <p>{`I'd like to encourage you to visit Avery's project on WordAnvil (Project Idoria), where you can read about the lore behind this symbol.`}</p>
             </Chapter>
         </div>
     )
