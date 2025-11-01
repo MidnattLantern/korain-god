@@ -6,7 +6,6 @@ import SmallAlt1 from "../../assets/portrait/downloadable/korain-bust-portrait-a
 import LargeAlt2 from "../../assets/portrait/downloadable/korain-bust-portrait-alt2-large.png";
 import SmallAlt2 from "../../assets/portrait/downloadable/korain-bust-portrait-alt2-small.jpg";
 import ProjectDetail from "../../components/projectDetail/ProjectDetail";
-import Footer from "../../components/footer/Footer";
 //import PortraitWeblog from "../../weblogContent/PortraitWeblog";
 
 const BustPortrait = () => {
@@ -26,7 +25,6 @@ const BustPortrait = () => {
             smallAssetAlt2={SmallAlt2} largeAssetAlt2={LargeAlt2} smallFileInfoAlt2="JPG 332 KB" largeFileInfoAlt2="PNG 4,2 MB"
             />
 */}
-        <Footer/>
         </div>
     )
 };
